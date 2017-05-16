@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<!-- 允许action的名字中出现"/" -->
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<include file="struts-default.xml" />
+	<package name="default" extends="struts-default" abstract="true">
+		<!-- <global-results> <result name="success">/WEB-INF/view/common/success.jsp</result> 
+			<result name="error">/WEB-INF/view/common/error.jsp</result> <result name="exception">/WEB-INF/view/common/error.jsp</result> 
+			</global-results> <global-exception-mappings> <exception-mapping result="exception" 
+			exception="java.lang.Throwable" /> </global-exception-mappings> -->
+	</package>
+	<package name="user" extends="default" namespace="/">
+		<action name="*/*" class="{1}Action" method="{2}">
+			<result name="success">/WEB-INF/view/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

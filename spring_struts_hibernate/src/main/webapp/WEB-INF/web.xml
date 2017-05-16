@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="foundation-web" version="3.0">
+	<display-name>foundation-spring_struts_hibernate</display-name>
+	
+	<!-- <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param> -->
+    <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>  
+            classpath:applicationContext.xml
+        </param-value>  
+    </context-param>  
+    <context-param>
+		<param-name>spring.profiles.active</param-name>
+		<param-value>dev</param-value>
+	</context-param>
+    <context-param>
+		<param-name>logbackConfigLocation</param-name>
+		<param-value>classpath:config/${spring.profiles.active}/logback.xml</param-value>
+	</context-param>
+
+   <!-- 设置web环境上下文（方便JSP页面获取）   -->  
+   <filter>  
+        <filter-name>Set Context Path</filter-name>  
+        <filter-class>lq.common.filter.ContextPathFilter</filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>Set Context Path</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping> 
+     
+    <!-- 字符编码过滤器（防止乱码） -->  
+    <filter>  
+        <filter-name>Set Character Encoding</filter-name>  
+        <filter-class>  
+            org.springframework.web.filter.CharacterEncodingFilter  
+        </filter-class>  
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>UTF-8</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>forceEncoding</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>Set Character Encoding</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>  
+    
+    <listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>  
+
+    <!-- Struts2.x前端控制器配置开始   --> 
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+     
+</web-app>
