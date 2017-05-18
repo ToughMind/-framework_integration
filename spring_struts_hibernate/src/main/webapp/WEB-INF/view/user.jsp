@@ -6,21 +6,30 @@
 <html>
 <body>
 	---------------------------------------------------------
-	<br />
-	<s:property value="page.id" />
-	<br />
-	<s:property value="page.name" />
-	<br />
-	<s:property value="page.status" />
-	<br />
-	<s:property value="page.createTime" />
-	<br />
-	<s:property value="page.price" />
-	<br />
-	<s:property value="page.updateTime" />
-	<br />
-	<s:property value="page.money" />
-	<br /> 
+    <s:if test="page != null">
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>status</th>
+                <th>createTime</th>
+                <th>updateTime</th>
+                <th>price</th>
+                <th>money</th>
+            </tr>
+            <s:iterator value="page" status="status">
+                <tr>
+                    <th><s:property value="id"/></th>
+                    <th><s:property value="name"/></th>
+                    <th><s:property value="status"/></th>
+                    <th><s:property value="createTime"/></th>
+                    <th><s:property value="updateTime"/></th>
+                    <th><s:property value="price"/></th>
+                    <th><s:property value="money"/></th>
+                </tr>
+            </s:iterator>
+        </table>
+    </s:if>
 	---------------------------------------------------------
 	<br />
 	<s:property value="%{model.id}" />

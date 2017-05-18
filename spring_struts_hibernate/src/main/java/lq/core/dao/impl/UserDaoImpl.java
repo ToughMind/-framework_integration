@@ -1,7 +1,6 @@
 package lq.core.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import lq.common.dao.hibernate.BaseDaoImpl;
 import lq.core.dao.UserDao;
 import lq.core.domain.po.UserPO;
 

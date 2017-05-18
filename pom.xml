@@ -6,7 +6,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>framework-parent</name>
-    <url>http://maven.apache.org</url>
 
     <modules>
         <module>spring_struts_hibernate</module>

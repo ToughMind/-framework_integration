@@ -1,4 +1,4 @@
-package lq.common.pagination;
+package lq.core.common.pagination;
 
 import java.util.List;
 

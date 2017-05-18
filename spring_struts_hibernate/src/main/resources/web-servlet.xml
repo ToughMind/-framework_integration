@@ -8,7 +8,4 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<!-- <bean name="userAction" class="lq.web.controller.UserAction" scope="prototype"> 
-		<property name="userWebService" ref="userWebService" /> </bean> -->
-
 </beans>

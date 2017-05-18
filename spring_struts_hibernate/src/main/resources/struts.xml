@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE struts PUBLIC  
-    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
-    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-	<constant name="struts.objectFactory"
-		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
-	<!-- 允许action的名字中出现"/" -->
-	<constant name="struts.enable.SlashesInActionNames" value="true" />
-	<include file="struts-default.xml" />
-	<package name="default" extends="struts-default" abstract="true">
-		<!-- <global-results> <result name="success">/WEB-INF/view/common/success.jsp</result> 
-			<result name="error">/WEB-INF/view/common/error.jsp</result> <result name="exception">/WEB-INF/view/common/error.jsp</result> 
-			</global-results> <global-exception-mappings> <exception-mapping result="exception" 
-			exception="java.lang.Throwable" /> </global-exception-mappings> -->
-	</package>
-	<package name="user" extends="default" namespace="/">
-		<action name="*/*" class="{1}Action" method="{2}">
-			<result name="success">/WEB-INF/view/{1}.jsp</result>
-		</action>
-	</package>
+    <constant name="struts.objectFactory"
+              value="org.apache.struts2.spring.StrutsSpringObjectFactory"/>
+    <!-- 允许action的名字中出现"/" -->
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <!--若要使用动态调用，一定要加上这句，新版本默认是关的-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <include file="struts-default.xml"/>
+    <package name="default" extends="struts-default" abstract="true">
+        <!--2.5增加了安全性，动态方法调用并不会全部验证通过，所以此处要加上此声明允许所有方法验证通过-->
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+    </package>
+    <package name="user" extends="default" namespace="/">
+        <action name="*/*" class="{1}Action" method="{2}">
+            <result name="success">/WEB-INF/view/{1}.jsp</result>
+        </action>
+    </package>
 </struts>

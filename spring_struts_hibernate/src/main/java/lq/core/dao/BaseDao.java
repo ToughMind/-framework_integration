@@ -1,4 +1,4 @@
-package lq.common.dao;
+package lq.core.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,11 +9,10 @@ import java.util.List;
  * @author 刘泉
  * @date 2016年11月8日 下午5:43:51
  */
-public interface IBaseDao<M extends Serializable, PK extends Serializable> {
+public interface BaseDao<M extends Serializable, PK extends Serializable> {
 
 	/**
 	 * 保存模型对象
-	 * @return 
 	 */
 	public void save(M model);
 

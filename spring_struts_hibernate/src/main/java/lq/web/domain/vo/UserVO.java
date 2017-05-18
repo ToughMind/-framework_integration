@@ -1,5 +1,6 @@
 package lq.web.domain.vo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -10,68 +11,74 @@ import java.util.Date;
  */
 public class UserVO {
 
-	private long id;
-	private String name;
-	private int status;
-	private long createTime;
-	private double price;
-	private Date updateTime;
-	private double money;
+    private long id;
 
-	public double getMoney() {
-		return money;
-	}
+    private String name;
 
-	public void setMoney(double money) {
-		this.money = money;
-	}
+    private int status;
 
-	public long getId() {
-		return id;
-	}
+    private long createTime;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private BigDecimal price;
 
-	public String getName() {
-		return name;
-	}
+    private Date updateTime;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private double money;
 
-	public int getStatus() {
-		return status;
-	}
+    public double getMoney() {
+        return money;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public void setMoney(double money) {
+        this.money = money;
+    }
 
-	public long getCreateTime() {
-		return createTime;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setCreateTime(long createTime) {
-		this.createTime = createTime;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Date getUpdateTime() {
-		return updateTime;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 
 }

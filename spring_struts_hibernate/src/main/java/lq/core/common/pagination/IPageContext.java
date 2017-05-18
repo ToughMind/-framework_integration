@@ -1,4 +1,4 @@
-package lq.common.pagination;
+package lq.core.common.pagination;
 
 /**
  * 分页上下文环境。用于计算Page。

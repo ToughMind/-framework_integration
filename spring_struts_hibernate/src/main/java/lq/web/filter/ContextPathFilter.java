@@ -1,14 +1,8 @@
-package lq.common.filter;
+package lq.web.filter;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * 公用类：用户设置当前web环境上下文，用于方便如JSP页面使用。
@@ -28,7 +22,7 @@ public class ContextPathFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		String contextPath = ((HttpServletRequest) request).getContextPath();
-		request.setAttribute(CONTEXT_PATH, contextPath);
+        request.setAttribute(CONTEXT_PATH, contextPath);
 		chain.doFilter(request, response);
 	}
 

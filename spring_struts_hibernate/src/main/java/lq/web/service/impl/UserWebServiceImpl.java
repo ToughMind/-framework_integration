@@ -19,27 +19,27 @@ import lq.web.service.UserWebService;
 @Service
 public class UserWebServiceImpl implements UserWebService {
 
-	@Autowired
-	private UserCoreService userCoreService;
+    @Autowired
+    private UserCoreService userCoreService;
 
-	@Override
-	public List<UserVO> queryAll() {
-		return UserVOconvertor.boToVo(userCoreService.queryAll());
-	}
+    @Override
+    public List<UserVO> queryAll() {
+        return UserVOconvertor.boToVo(userCoreService.queryAll());
+    }
 
-	@Override
-	public UserVO getById(long id) {
-		return UserVOconvertor.boToVo(userCoreService.getById(id));
-	}
+    @Override
+    public UserVO getById(long id) {
+        return UserVOconvertor.boToVo(userCoreService.getById(id));
+    }
 
-	@Override
-	public boolean insert(UserVO vo) {
-		return userCoreService.insert(UserVOconvertor.voToBo(vo));
-	}
+    @Override
+    public boolean insert(UserVO vo) {
+        return userCoreService.insert(UserVOconvertor.voToBo(vo));
+    }
 
-	@Override
-	public boolean delete(long id) {
-		return userCoreService.delete(id);
-	}
+    @Override
+    public boolean delete(long id) {
+        return userCoreService.delete(id);
+    }
 
 }

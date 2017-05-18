@@ -31,7 +31,4 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
 	</aop:config>
 
-	<!-- <bean id="userCoreService" class="lq.core.service.impl.UserCoreServiceImpl">
-		<property name="userDao" ref="userDao" />
-	</bean> -->
 </beans>

@@ -1,6 +1,5 @@
 package lq.core.dao;
 
-import lq.common.dao.IBaseDao;
 import lq.core.domain.po.UserPO;
 
 /**
@@ -9,6 +8,6 @@ import lq.core.domain.po.UserPO;
  * @author 刘泉
  * @date 2016年9月29日 下午2:35:28
  */
-public interface UserDao extends IBaseDao<UserPO, Long> {
+public interface UserDao extends BaseDao<UserPO, Long> {
 
 }

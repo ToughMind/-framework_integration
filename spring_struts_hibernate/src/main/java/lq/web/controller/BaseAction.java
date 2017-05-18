@@ -1,11 +1,10 @@
-package lq.common.action;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package lq.web.controller;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.ValueStack;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 公用类：表现层Action实现。
