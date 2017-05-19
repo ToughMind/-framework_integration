@@ -69,7 +69,8 @@ public class UserAction extends BaseAction {
      * http://localhost:8080/user!execute 或者 http://localhost:8080/user
      */
     public String execute() throws Exception {
-        return list();
+        super.logger.info("打印一行日志");
+        return "success";
     }
 
 }
