@@ -147,7 +147,6 @@ public abstract class BaseDaoImpl<M extends Serializable, PK extends Serializabl
     protected <T> List<T> list(final String hql, final int pn,
         final int pageSize, final Object... paramlist) {
         return getHibernateTemplate().execute(new HibernateCallback<List<T>>() {
-
             @Override
             public List<T> doInHibernate(Session session)
                 throws HibernateException {

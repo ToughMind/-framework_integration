@@ -4,8 +4,7 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss a} [ %thread ] [ %logger
-                %method:%L]%n [ %p ]: %msg%n
+            <pattern>%d{yyyy-MM-dd HH:mm:ss a} [%thread] [%logger %method: %L]%n[%p]: %msg%n
             </pattern>
             <charset>UTF-8</charset>
         </encoder>
@@ -21,9 +20,9 @@
     <logger name="org.apache.ibatis" level="OFF"/>
 
     <!-- 排除了上面子节点所打印的日志 -->
-   <!-- <root>
+    <root>
         <level value="DEBUG"/>
         <appender-ref ref="console"/>
-    </root>-->
+    </root>
 
 </configuration>
