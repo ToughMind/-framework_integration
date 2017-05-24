@@ -10,6 +10,8 @@
 2、 集成了druid连接池，并使用其监控服务等。
 
 ## 疑难点
+### 配置相关
+- 若同时有application.yml和application.properties文件，项目会优先选择yml文件。
 
 ### spring boot应用入口
 - 官方建议，入口类不要写在默认目录下（理论上实战开发中不会这么设计）。
