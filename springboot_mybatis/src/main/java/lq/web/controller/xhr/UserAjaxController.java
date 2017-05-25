@@ -1,9 +1,13 @@
 package lq.web.controller.xhr;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lq.web.service.UserWebService;
 import lq.web.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +30,8 @@ public class UserAjaxController {
     /**
      * http://localhost:8080/xhr/user/add
      */
-    @RequestMapping("/add")
+    @ApiOperation(value = "增加一条用户列表", notes = "目前没有页面，代码写死")
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Object add() {
         UserVO vo = new UserVO();
         vo.setName("good");
@@ -41,7 +46,9 @@ public class UserAjaxController {
     /**
      * http://localhost:8080/xhr/user/get?id=4
      */
-    @RequestMapping("/get")
+    @ApiOperation(value = "根据id获取某条用户记录", notes = "传参id")
+    @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "long")
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     public Object get(@RequestParam(value = "id", defaultValue = "0") long id) {
         return userWebService.getById(id);
     }
@@ -49,7 +56,8 @@ public class UserAjaxController {
     /**
      * http://localhost:8080/xhr/user/list
      */
-    @RequestMapping("/list")
+    @ApiOperation(value = "获取用户列表信息", notes = "传参id")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public Object list() {
         return userWebService.queryAll();
     }

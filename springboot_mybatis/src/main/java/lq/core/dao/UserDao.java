@@ -11,12 +11,12 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
- * 数据持久层DAO接口。
+ * 用户相关。
  * 
  * @author 刘泉 2017年05月24日 15:15
  */
 @Mapper
-public interface UserDao {
+public interface UserDao extends BaseDao<UserPO> {
 
     @Insert("insert into user(name,status,createTime,updateTime,price,money) values(#{name},#{status},#{createTime},#{updateTime},#{price},#{money})")
     boolean insert(UserPO po);

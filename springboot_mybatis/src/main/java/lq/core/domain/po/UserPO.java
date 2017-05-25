@@ -1,10 +1,14 @@
 package lq.core.domain.po;
 
+import tk.mybatis.mapper.annotation.NameStyle;
+import tk.mybatis.mapper.code.Style;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class UserPO implements Serializable {
+@NameStyle(value = Style.camelhumpAndLowercase)
+public class UserPO extends BasePO implements Serializable {
 
     private long id;
 
