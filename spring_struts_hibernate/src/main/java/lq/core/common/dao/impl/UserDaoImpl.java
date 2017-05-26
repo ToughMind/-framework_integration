@@ -1,4 +1,4 @@
-package lq.core.dao.impl;
+package lq.core.common.dao.impl;
 
 import org.springframework.stereotype.Repository;
 import lq.core.dao.UserDao;

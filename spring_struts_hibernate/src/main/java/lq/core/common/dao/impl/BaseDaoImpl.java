@@ -1,4 +1,4 @@
-package lq.core.dao.impl;
+package lq.core.common.dao.impl;
 
 import lq.core.common.pagination.PageUtil;
 import lq.core.dao.BaseDao;

@@ -1,33 +1,32 @@
+/**
+ * @(#)UserDao.JAVA, 2017年05月26日.
+ *
+ * Copyright 2017 Netease, Inc. All rights reserved.
+ * NETEASE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
 package lq.core.dao;
 
-import lq.core.domain.bo.UserBO;
 import lq.core.domain.po.UserPO;
-import lq.core.domain.po.converter.UserPOconvertor;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import lq.core.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
 /**
  * 用户相关。
- * 
- * @author 刘泉 2017年05月24日 15:15
+ *
+ * @author 刘泉 2017年05月26日 15:39
  */
-@Mapper
-public interface UserDao extends BaseDao<UserPO> {
+@Repository
+public class UserDao extends AbstactBaseDao<UserPO> {
 
-    @Insert("insert into user(name,status,createTime,updateTime,price,money) values(#{name},#{status},#{createTime},#{updateTime},#{price},#{money})")
-    boolean insert(UserPO po);
+    @Autowired
+    private UserMapper userMapper;
 
-    @Delete("delete from user where id = #{id}")
-    boolean delete(long id);
-
-    @Select("select * from user where id = #{id}")
-    UserPO getById(long id);
-
-    @Select("select * from user")
-    List<UserPO> queryAll();
+    public List<UserPO> queryAll() {
+        return userMapper.queryAll();
+    }
 
 }

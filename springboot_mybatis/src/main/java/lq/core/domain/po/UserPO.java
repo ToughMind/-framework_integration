@@ -7,17 +7,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-@NameStyle(value = Style.camelhumpAndLowercase)
-public class UserPO extends BasePO implements Serializable {
+@Table(name = "user")
+public class UserPO implements Serializable {
 
+    @Id
     private long id;
 
     private String name;
 
     private int status;
 
+    @Column(name = "createTime")
     private long createTime;
 
+    @Column(name = "updateTime")
     private String updateTime;
 
     private BigDecimal price;

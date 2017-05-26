@@ -1,15 +1,12 @@
 package lq.core.service.impl;
 
-import lq.core.dao.BaseDao;
 import lq.core.dao.UserDao;
 import lq.core.domain.bo.UserBO;
-import lq.core.domain.po.UserPO;
 import lq.core.domain.po.converter.UserPOconvertor;
 import lq.core.service.UserCoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,33 +17,28 @@ import java.util.List;
 @Service
 public class UserCoreServiceImpl implements UserCoreService {
 
-    //@Resource
-    //private UserDao userDao;
-
-    @Resource(name="baseDao")
-    private BaseDao userDao;
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public UserBO getById(long id) {
-        return UserPOconvertor.poToBo((UserPO) userDao.getEntityById(UserPO.class, id));
-        //return UserPOconvertor.poToBo(userDao.getById(id));
+        return UserPOconvertor.poToBo(userDao.getEntityById(id));
     }
 
     @Override
     public List<UserBO> queryAll() {
-        //return UserPOconvertor.poToBo(userDao.queryAll());
-        return UserPOconvertor.poToBo(userDao.selectAll(UserPO.class));
+        return UserPOconvertor.poToBo(userDao.queryAll());
     }
 
     @Override
     public boolean insert(UserBO bo) {
-        //userDao.insert(UserPOconvertor.boToPo(bo));
+        System.out.println(userDao.addEntity(UserPOconvertor.boToPo(bo)));
         return true;
     }
 
     @Override
     public boolean delete(long id) {
-        //userDao.delete(id);
+        System.out.println(userDao.deleteEntityById(id));
         return true;
     }
 
