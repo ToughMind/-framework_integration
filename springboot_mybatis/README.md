@@ -7,7 +7,13 @@
 
 1、 集成了swagger2（包括其ui界面），可以自动生成api文档结构，详见swagger2官方文档
 
-2、 集成了druid连接池，并使用其监控服务等。
+2、 集成了druid连接池，并使用其监控服务等
+
+3、 使用log4j2+slf4j日志框架
+
+4、 支持@Scheduled注解的定时器任务执行
+
+5、 支持@Async注解的方法异步调用
 
 ## 疑难点
 ### 配置相关
@@ -22,4 +28,3 @@
 
 ### spring boot注解相关
 - @RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。
-

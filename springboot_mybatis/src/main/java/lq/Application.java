@@ -4,12 +4,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * 项目启动入口。
  *
  * @author 刘泉 2017年05月23日 21:02
  */
+@EnableScheduling
+@EnableAsync
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
