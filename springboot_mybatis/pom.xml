@@ -26,6 +26,7 @@
         <mybatis.pagehelper.version>5.0.1</mybatis.pagehelper.version>
         <fastjson.version>1.2.32</fastjson.version>
         <log4j2.version>1.5.3.RELEASE</log4j2.version>
+        <mysql.version>6.0.6</mysql.version>
     </properties>
 
     <dependencies>
