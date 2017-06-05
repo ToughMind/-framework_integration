@@ -97,7 +97,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
+            <version>${this.mysql.version}</version>
         </dependency>
 
         <!-- json工具 -->
