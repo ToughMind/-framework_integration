@@ -19,6 +19,11 @@
 ### 配置相关
 - 若同时有application.yml和application.properties文件，项目会优先选择yml文件。
 
+- 此处有个大坑要注意，由于本项目引入了spring-boot-starter-parent，所以在`properties`里申明的名称会被其使用（原意是想在此pom.xml文件中使用的）。
+ 
+  - 譬如`<spring-boot.version>1.5.3.RELEASE</spring-boot.version>`，若声明了名称，在maven编译的时候，会报如下错误`Non-resolvable import POM: Failure to find org.apache.logging.log4j:log4j-bom:pom:1.5.3.RELEASE`
+  - 建议在`properties`里的命名加上特殊标识的前缀，以与默认的一些命名区分。
+
 ### spring boot应用入口
 - 官方建议，入口类不要写在默认目录下（理论上实战开发中不会这么设计）。
 

@@ -19,14 +19,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
-        <tk.mybatis.version>3.4.0</tk.mybatis.version>
-        <spring-boot.mybatis.version>1.3.0</spring-boot.mybatis.version>
-        <druid.version>1.0.31</druid.version>
-        <mybatis.pagehelper.version>5.0.1</mybatis.pagehelper.version>
-        <fastjson.version>1.2.32</fastjson.version>
-        <log4j2.version>1.5.3.RELEASE</log4j2.version>
-        <mysql.version>6.0.6</mysql.version>
+        <this.spring-boot.version>1.5.3.RELEASE</this.spring-boot.version>
+        <this.tk.mybatis.version>3.4.0</this.tk.mybatis.version>
+        <this.spring-boot.mybatis.version>1.3.0</this.spring-boot.mybatis.version>
+        <this.druid.version>1.0.31</this.druid.version>
+        <this.mybatis.pagehelper.version>5.0.1</this.mybatis.pagehelper.version>
+        <this.fastjson.version>1.2.32</this.fastjson.version>
+        <this.log4j2.version>1.5.3.RELEASE</this.log4j2.version>
+        <this.mysql.version>6.0.6</this.mysql.version>
     </properties>
 
     <dependencies>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${this.spring-boot.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>spring-boot-starter-logging</artifactId>
@@ -57,12 +57,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${this.spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${this.spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -71,28 +71,28 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>${this.spring-boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
+            <version>${this.druid.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${spring-boot.mybatis.version}</version>
+            <version>${this.spring-boot.mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
-            <version>${tk.mybatis.version}</version>
+            <version>${this.tk.mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>${mybatis.pagehelper.version}</version>
+            <version>${this.mybatis.pagehelper.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -104,14 +104,14 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
+            <version>${this.fastjson.version}</version>
         </dependency>
 
         <!-- 日志系统 -->
         <dependency> <!-- 引入log4j2依赖 -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
-            <version>${log4j2.version}</version>
+            <version>${this.log4j2.version}</version>
         </dependency>
     </dependencies>
 
